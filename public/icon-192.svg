@@ -1,0 +1,15 @@
+<svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="192" height="192" rx="40" fill="#4FC3F7"/>
+  
+  <!-- Book -->
+  <rect x="46" y="60" width="100" height="80" rx="8" fill="white"/>
+  <path d="M96 60 V140" stroke="#E0E0E0" stroke-width="2"/>
+  
+  <!-- ABC Text -->
+  <text x="96" y="95" font-family="Comic Sans MS, cursive" font-size="28" font-weight="bold" fill="#4FC3F7" text-anchor="middle">ABC</text>
+  <text x="96" y="125" font-family="Comic Sans MS, cursive" font-size="28" font-weight="bold" fill="#FFB74D" text-anchor="middle">123</text>
+  
+  <!-- Star -->
+  <polygon points="140,40 145,55 162,55 148,66 153,82 140,72 127,82 132,66 118,55 135,55" fill="#FFF176"/>
+</svg>

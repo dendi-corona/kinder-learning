@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-rounded: 'Comic Sans MS', 'Chalkboard', 'Varela Round', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: var(--font-rounded);
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(135deg, #E3F2FD 0%, #FFF3E0 100%);
+  min-height: 100vh;
+}
+
+/* Kid-friendly button styles */
+.btn-kid {
+  @apply px-6 py-4 rounded-2xl font-bold text-xl transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg;
+}
+
+.btn-kid-blue {
+  @apply btn-kid bg-kid-blue text-white hover:bg-sky-400;
+}
+
+.btn-kid-green {
+  @apply btn-kid bg-kid-green text-white hover:bg-green-400;
+}
+
+.btn-kid-yellow {
+  @apply btn-kid bg-kid-yellow text-gray-800 hover:bg-yellow-300;
+}
+
+.btn-kid-orange {
+  @apply btn-kid bg-kid-orange text-white hover:bg-orange-400;
+}
+
+.btn-kid-red {
+  @apply btn-kid bg-kid-red text-white hover:bg-red-400;
+}
+
+.btn-kid-purple {
+  @apply btn-kid bg-kid-purple text-white hover:bg-purple-400;
+}
+
+.btn-kid-pink {
+  @apply btn-kid bg-kid-pink text-white hover:bg-pink-400;
+}
+
+/* Card styles */
+.card-kid {
+  @apply bg-white rounded-3xl shadow-xl p-6 border-4 border-white;
+}
+
+/* Animation classes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes celebrate {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2) rotate(10deg); }
+  100% { transform: scale(1); }
+}
+
+.animate-celebrate {
+  animation: celebrate 0.5s ease-in-out;
+}
+
+/* Touch-friendly sizing */
+.touch-target {
+  @apply min-h-[60px] min-w-[60px];
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
