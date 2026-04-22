@@ -20,6 +20,8 @@ export interface ProgressData {
   };
   storiesRead: number;
   drawingsCreated: number;
+  favoriteSongs?: string[];
+  favoriteStories?: string[];
   lastVisit: string;
 }
 
@@ -43,6 +45,8 @@ export const defaultProgress: ProgressData = {
   },
   storiesRead: 0,
   drawingsCreated: 0,
+  favoriteSongs: [],
+  favoriteStories: [],
   lastVisit: new Date().toISOString(),
 };
 

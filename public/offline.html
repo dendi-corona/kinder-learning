@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - Kinder Quest</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Comic Sans MS', 'Chalkboard', sans-serif;
+      background: linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      color: #6366f1;
+      margin-bottom: 20px;
+    }
+    
+    .mascot {
+      width: 150px;
+      height: 150px;
+      margin: 20px auto;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    p {
+      font-size: 1.2rem;
+      color: #6b7280;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+      transition: transform 0.2s;
+    }
+    
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    
+    .icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    
+    .tips {
+      background: #f3f4f6;
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 30px;
+      text-align: left;
+    }
+    
+    .tips h3 {
+      color: #374151;
+      margin-bottom: 10px;
+    }
+    
+    .tips ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .tips li {
+      padding: 5px 0;
+      color: #6b7280;
+    }
+    
+    .tips li:before {
+      content: '✓ ';
+      color: #22c55e;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">📡</div>
+    
+    <svg class="mascot" viewBox="0 0 70 70">
+      <ellipse cx="35" cy="40" rx="28" ry="25" fill="#A0522D" />
+      <ellipse cx="35" cy="45" rx="18" ry="15" fill="#DEB887" />
+      <ellipse cx="12" cy="40" rx="8" ry="12" fill="#A0522D" />
+      <ellipse cx="58" cy="40" rx="8" ry="12" fill="#A0522D" />
+      <ellipse cx="35" cy="30" rx="22" ry="18" fill="#DEB887" />
+      <circle cx="20" cy="25" r="8" fill="white" />
+      <circle cx="50" cy="25" r="8" fill="white" />
+      <circle cx="20" cy="25" r="4" fill="#2C1810" />
+      <circle cx="50" cy="25" r="4" fill="#2C1810" />
+      <circle cx="22" cy="23" r="2" fill="white" />
+      <circle cx="52" cy="23" r="2" fill="white" />
+      <polygon points="35,32 30,40 40,40" fill="#FFA500" />
+      <path d="M15,18 Q20,15 25,18" stroke="#8B4513" strokeWidth="2" fill="none" />
+      <path d="M45,18 Q50,15 55,18" stroke="#8B4513" strokeWidth="2" fill="none" />
+      <ellipse cx="25" cy="62" rx="5" ry="3" fill="#FFA500" />
+      <ellipse cx="45" cy="62" rx="5" ry="3" fill="#FFA500" />
+    </svg>
+    
+    <h1>You're Offline!</h1>
+    
+    <p>
+      Don't worry! Your progress is saved safely. 
+      Some features might not work until you're back online.
+    </p>
+    
+    <a href="/" class="btn">Try Again 🔄</a>
+    
+    <div class="tips">
+      <h3>💡 Tips:</h3>
+      <ul>
+        <li>Check your internet connection</li>
+        <li>Your progress is saved locally</li>
+        <li>Some activities work offline</li>
+        <li>Come back soon for more fun!</li>
+      </ul>
+    </div>
+  </div>
+  
+  <script>
+    // Auto-retry when connection is restored
+    window.addEventListener('online', () => {
+      window.location.reload();
+    });
+    
+    // Check connection status periodically
+    setInterval(() => {
+      if (navigator.onLine) {
+        window.location.reload();
+      }
+    }, 5000);
+  </script>
+</body>
+</html>
